@@ -69,8 +69,28 @@ public class AddressBookMain {
                             }
                         }while (choice!=3);
                         case 6:
-                            addressBook.sortedList();
-                            break;
+                            do {
+                                System.out.println("-----------------------------");
+                                System.out.println("1. Sorted list\n 2. Sorted by City\n3. Search by State\n4. Exit");
+                                System.out.println("Choice :");
+                                choice = sc.nextInt();
+                                switch (choice) {
+                                    case 1:
+                                        addressBook.sortedList();
+                                        break;
+                                    case 2:
+                                        addressBook.searchByCity();
+                                        break;
+                                    case 3:
+                                        addressBook.searchByState();
+                                        break;
+                                    case 4:
+                                        System.out.println("Thank you ");
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            }while (choice!=4);
                 case 7:
                     System.out.println("Thank you for Using Address Book");
                             default:
