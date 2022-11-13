@@ -26,7 +26,7 @@ public class AddressBookMain {
                 case 4:
                     do {
                     System.out.println("---------------------------");
-                    System.out.println("1. Display Contacts\n2.Display by City\n3. Display by State\n4. Exit");
+                    System.out.println("1. Display Contacts\n2.Display and Count by City\n3. Display and Count by State\n4. Exit");
                     System.out.println("Choice :");
                     choice=sc.nextInt();
                     switch (choice) {
