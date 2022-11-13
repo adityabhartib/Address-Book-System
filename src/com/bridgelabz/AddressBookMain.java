@@ -9,7 +9,7 @@ public class AddressBookMain {
         int choice;
         AddressBook addressBook = new AddressBook();
         do {
-            System.out.println("1. Add New Contact\n2. Edit Contact\n3. Delete Contact" + "\n4. Display Contact\n5. Search by State\n6. Exit");
+            System.out.println("1. Add New Contact\n2. Edit Contact\n3. Delete Contact" + "\n4. Display Contact\n5. Search by State\n6. Sorted List\n 7. Exit");
             System.out.println("Enter Choice: ");
             choice =sc.nextInt();
 
@@ -47,35 +47,37 @@ public class AddressBookMain {
                             break;
                     }
                     }while (choice!=4);
-                            case 5:
-                                do {
-                                    System.out.println("-----------------------------");
-                                    System.out.println("1. Search by City\n2. Search by State\n3. Exit");
-                                    System.out.println("Choice :");
-                                    choice = sc.nextInt();
-                                    switch (choice) {
-                                        case 1:
-                                            addressBook.searchByCity();
-                                            break;
-                                        case 2:
-                                            addressBook.searchByState();
-                                            break;
-                                        case 3:
-                                            System.out.println("Thank you");
-                                            break;
-                                        default:
-                                            System.out.println("Please Select Valid Input");
-                                            break;
-                                    }
-                                }while (choice!=3);
-                case 6:
-                    System.out.println("Thank You for Using Address Book.");
-                    break;
-                default:
-                    System.out.println("Please Select between 1 to 6 only.");
-                    break;
+                    case 5:
+                        do {
+                            System.out.println("-----------------------------");
+                            System.out.println("1. Search by City\n2. Search by State\n3. Exit");
+                            System.out.println("Choice :");
+                            choice = sc.nextInt();
+                            switch (choice) {
+                                case 1:
+                                    addressBook.searchByCity();
+                                    break;
+                                case 2:
+                                    addressBook.searchByState();
+                                    break;
+                                case 3:
+                                    System.out.println("Thank you");
+                                    break;
+                                default:
+                                    System.out.println("Please Select Valid Input");
+                                    break;
+                            }
+                        }while (choice!=3);
+                        case 6:
+                            addressBook.sortedList();
+                            break;
+                case 7:
+                    System.out.println("Thank you for Using Address Book");
+                            default:
+                                System.out.println("Please Select between 1 to 6 only.");
+                                break;
             }
         }
-        while( choice != 6 );
+        while( choice != 7 );
     }
 }
