@@ -108,4 +108,9 @@ public class AddressBook {
             System.out.println("Not Found");
         }
     }
+    public void searchByState(){
+        System.out.println("Enter State Name:");
+        String stateName = sc.next();
+        list.stream().filter(c ->c.getState()==stateName).forEach(c-> System.out.println(c));
+    }
 }
