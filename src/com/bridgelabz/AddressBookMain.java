@@ -24,25 +24,50 @@ public class AddressBookMain {
                     addressBook.deleteContact();
                     break;
                 case 4:
-                    addressBook.displayContact();
-                    break;
-                case 5:
-                    System.out.println("1. Search by City\n2. Search by State\n3. Exit");
+                    do {
+                    System.out.println("---------------------------");
+                    System.out.println("1. Display Contacts\n2.Display by City\n3. Display by State\n4. Exit");
                     System.out.println("Choice :");
                     choice=sc.nextInt();
-                    switch (choice){
+                    switch (choice) {
                         case 1:
-                            addressBook.searchByCity();
-                        break;
+                            addressBook.displayContact();
+                            break;
                         case 2:
-                            addressBook.searchByState();
+                            addressBook.countByCity();
                             break;
                         case 3:
+                            addressBook.countByState();
+                            break;
+                        case 4:
                             System.out.println("Thank you");
+                            break;
                         default:
                             System.out.println("Please Select Valid Input");
+                            break;
                     }
-                  break;
+                    }while (choice!=4);
+                            case 5:
+                                do {
+                                    System.out.println("-----------------------------");
+                                    System.out.println("1. Search by City\n2. Search by State\n3. Exit");
+                                    System.out.println("Choice :");
+                                    choice = sc.nextInt();
+                                    switch (choice) {
+                                        case 1:
+                                            addressBook.searchByCity();
+                                            break;
+                                        case 2:
+                                            addressBook.searchByState();
+                                            break;
+                                        case 3:
+                                            System.out.println("Thank you");
+                                            break;
+                                        default:
+                                            System.out.println("Please Select Valid Input");
+                                            break;
+                                    }
+                                }while (choice!=3);
                 case 6:
                     System.out.println("Thank You for Using Address Book.");
                     break;
