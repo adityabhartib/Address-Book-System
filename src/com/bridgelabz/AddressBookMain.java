@@ -9,7 +9,7 @@ public class AddressBookMain {
         int choice;
         AddressBook addressBook = new AddressBook();
         do {
-            System.out.println("1. Add New Contact\n2. Edit Contact\n3. Delete Contact" + "\n4. Display Contact\n5. Search by State\n6. Sorted List\n 7. Exit");
+            System.out.println("1. Add New Contact\n2. Edit Contact\n3. Delete Contact" + "\n4. Display Contact\n5. Search by State\n6. Sorted List\n7. Exit");
             System.out.println("Enter Choice: ");
             choice =sc.nextInt();
 
@@ -26,7 +26,7 @@ public class AddressBookMain {
                 case 4:
                     do {
                     System.out.println("---------------------------");
-                    System.out.println("1. Display Contacts\n2.Display and Count by City\n3. Display and Count by State\n4. Exit");
+                    System.out.println("1. Display Contacts\n2. Display and Count by City\n3. Display and Count by State\n0. Exit");
                     System.out.println("Choice :");
                     choice=sc.nextInt();
                     switch (choice) {
@@ -39,14 +39,15 @@ public class AddressBookMain {
                         case 3:
                             addressBook.countByState();
                             break;
-                        case 4:
-                            System.out.println("Thank you");
+                        case 0:
+                            System.out.println("Thank you for using AddressBook ");
                             break;
                         default:
                             System.out.println("Please Select Valid Input");
                             break;
                     }
-                    }while (choice!=4);
+                    }while (choice!=0);
+                    break;
                     case 5:
                         do {
                             System.out.println("-----------------------------");
@@ -61,13 +62,14 @@ public class AddressBookMain {
                                     addressBook.searchByState();
                                     break;
                                 case 3:
-                                    System.out.println("Thank you");
+                                    System.out.println("Thank you for using AddressBook");
                                     break;
                                 default:
                                     System.out.println("Please Select Valid Input");
                                     break;
                             }
                         }while (choice!=3);
+                        break;
                         case 6:
                             do {
                                 System.out.println("-----------------------------");
@@ -85,16 +87,17 @@ public class AddressBookMain {
                                         addressBook.searchByState();
                                         break;
                                     case 4:
-                                        System.out.println("Thank you ");
+                                        System.out.println("Thank you for Using AddressBook ");
                                         break;
                                     default:
                                         break;
                                 }
                             }while (choice!=4);
+                            break;
                 case 7:
                     System.out.println("Thank you for Using Address Book");
                             default:
-                                System.out.println("Please Select between 1 to 6 only.");
+                                System.out.println("Please Select between 1 to 7 only.");
                                 break;
             }
         }

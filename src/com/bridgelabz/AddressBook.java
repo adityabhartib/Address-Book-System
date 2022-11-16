@@ -9,38 +9,18 @@ public class AddressBook {
     ArrayList<Contacts> list = new ArrayList<>();
 
     public void addNewContact() {
-        contacts = new Contacts();
-        System.out.println("----------------------------------");
-        System.out.println("Enter the Contact Details :-");
-        System.out.println("Enter the First Name :");
-        contacts.setFirstname(sc.next());
-        System.out.println("Enter the Last Name :");
-        contacts.setLastname(sc.next());
-        System.out.println("Enter the Address :");
-        contacts.setAddress(sc.next());
-        System.out.println("Enter the City :");
-        contacts.setCity(sc.next());
-        System.out.println("Enter the State :");
-        contacts.setState(sc.next());
-        System.out.println("Enter the PIN Code :");
-        contacts.setPin(sc.next());
-        System.out.println("Enter the Phone Number :");
-        contacts.setPhonenumber(sc.next());
-        System.out.println("Enter the EMail ID :");
-        contacts.setEmail(sc.next());
-        System.out.println("Contacts Added Successfully------!!!");
-        System.out.println("-----------------------------------------");
-        list.add(contacts);
         System.out.println("Enter First Name :");
         String firstName = sc.next();
-        if (contacts.getFirstname().equalsIgnoreCase(firstName)) {
-            System.out.println("Name already Exist----!!");
-        } else {
+        try {
+            if (contacts.getFirstname().equalsIgnoreCase(firstName)) {
+                System.out.println("Contact Already Exist ...!!!");
+            }
+        } catch (NullPointerException e) {
+            System.out.println("Contact Not Found------!!, Please Add First");
             contacts = new Contacts();
             System.out.println("----------------------------------");
             System.out.println("Enter the Contact Details :-");
-            System.out.println("Enter the First Name :");
-            contacts.setFirstname(sc.next());
+            contacts.setFirstname(firstName);
             System.out.println("Enter the Last Name :");
             contacts.setLastname(sc.next());
             System.out.println("Enter the Address :");
@@ -60,7 +40,6 @@ public class AddressBook {
             list.add(contacts);
         }
     }
-
     public void displayContact() {
         if (contacts.getFirstname() == null) {
             System.out.println("Contact Not Found");
