@@ -1,5 +1,9 @@
 package com.bridgelabz;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -52,6 +56,7 @@ public class AddressBook {
         contacts = new Contacts();
         System.out.println("----------------------------------");
         System.out.println("Enter the Contact Details :-");
+        System.out.println("Enter the First Name :");
         contacts.setFirstname(sc.next());
         System.out.println("Enter the Last Name :");
         contacts.setLastname(sc.next());
@@ -159,6 +164,27 @@ public class AddressBook {
         List<Contacts> sortedlist = list.stream().sorted(Comparator.comparing(contacts -> contacts.getFirstname())).collect(Collectors.toList());
         for (Contacts details : sortedlist) {
             System.out.println(details.toString());
+        }
+    }
+    public void writeFiles()  {
+        try{
+            FileWriter fw=new FileWriter("Contact.txt");
+            fw.write(String.valueOf(list));
+            fw.write("\n");
+            fw.flush();
+            fw.close();
+        }catch(Exception e){System.out.println(e);}
+        System.out.println("Success...");
+    }
+    public void readFiles(){
+        try {
+            FileReader fr = new FileReader("Contact.txt");
+            int i;
+            while ((i = fr.read()) != -1)
+                System.out.print((char) i);
+            fr.close();
+        } catch (Exception e) {
+            System.out.println("Read Successfully---!");
         }
     }
 }

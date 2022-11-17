@@ -1,9 +1,0 @@
-Contacts Details :
-Firstname : Aditya
-Lastname : Bharti
-Address : JB
-City : rfrg
-State : rgt
-Pin : tgt
-PhoneNumber : tgt
-Email : gtgtg
