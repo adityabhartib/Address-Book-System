@@ -16,7 +16,7 @@ public class AddressBookMain {
 
             switch (choice) {
                 case 1:
-                    addressBook.addNewContact();
+                    addressBook.checkContact();
                     break;
                 case 2:
                     addressBook.editContact();

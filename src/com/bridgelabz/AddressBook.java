@@ -18,52 +18,59 @@ public class AddressBook {
             map.put(addressbook, list);
         }
     }
-    public void showAddressBook(){
-        for (String key:map.keySet()){
+
+    public void showAddressBook() {
+        for (String key : map.keySet()) {
             System.out.println(key);
         }
     }
-
-    public void addNewContact() {
+    public void checkContact(){
         System.out.println("Enter AddressBook Name :");
         String adname = sc.next();
         for (String key : map.keySet()) {
             if (!adname.equalsIgnoreCase(key)) {
                 System.out.println("Address Book Not Found-----!!!");
-            } else {
+            }else{
+                System.out.println("Match Found-----!!");
                 System.out.println("Enter First Name :");
                 String firstName = sc.next();
                 try {
-                    if (contacts.getFirstname().equalsIgnoreCase(firstName)) {
-                        System.out.println("Contact Already Exist ...!!!");
+                    if (!firstName.equalsIgnoreCase(contacts.getFirstname())) {
+                        addNewContact();
+                    }else{
+                        System.out.println("Contact Already Exist");
                     }
                 } catch (NullPointerException e) {
                     System.out.println("Contact Not Found------!!, Please Add First");
-                    contacts = new Contacts();
-                    System.out.println("----------------------------------");
-                    System.out.println("Enter the Contact Details :-");
-                    contacts.setFirstname(firstName);
-                    System.out.println("Enter the Last Name :");
-                    contacts.setLastname(sc.next());
-                    System.out.println("Enter the Address :");
-                    contacts.setAddress(sc.next());
-                    System.out.println("Enter the City :");
-                    contacts.setCity(sc.next());
-                    System.out.println("Enter the State :");
-                    contacts.setState(sc.next());
-                    System.out.println("Enter the PIN Code :");
-                    contacts.setPin(sc.next());
-                    System.out.println("Enter the Phone Number :");
-                    contacts.setPhonenumber(sc.next());
-                    System.out.println("Enter the EMail ID :");
-                    contacts.setEmail(sc.next());
-                    System.out.println("Contacts Added Successfully------!!!");
-                    System.out.println("-----------------------------------------");
-                    list.add(contacts);
+                    addNewContact();
+
                 }
             }
-            }
         }
+    }
+    public void addNewContact() {
+        contacts = new Contacts();
+        System.out.println("----------------------------------");
+        System.out.println("Enter the Contact Details :-");
+        contacts.setFirstname(sc.next());
+        System.out.println("Enter the Last Name :");
+        contacts.setLastname(sc.next());
+        System.out.println("Enter the Address :");
+        contacts.setAddress(sc.next());
+        System.out.println("Enter the City :");
+        contacts.setCity(sc.next());
+        System.out.println("Enter the State :");
+        contacts.setState(sc.next());
+        System.out.println("Enter the PIN Code :");
+        contacts.setPin(sc.next());
+        System.out.println("Enter the Phone Number :");
+        contacts.setPhonenumber(sc.next());
+        System.out.println("Enter the EMail ID :");
+        contacts.setEmail(sc.next());
+        System.out.println("Contacts Added Successfully------!!!");
+        System.out.println("-----------------------------------------");
+        list.add(contacts);
+    }
         public void displayContact () {
             try {
                 if (contacts.getFirstname() == null) {
