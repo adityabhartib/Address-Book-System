@@ -171,7 +171,7 @@ public class AddressBook {
     public void writeFiles()  {
         try{
             FileWriter fw=new FileWriter("Contact.json");
-            fw.write(String.valueOf(list));
+            fw.write(String.valueOf(map));
             fw.write("\n");
             fw.flush();
             fw.close();
